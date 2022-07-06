@@ -1,0 +1,3308 @@
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    /* text-transform: capitalize; */
+    transition: all 0.2s linear;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+/* ---------------------------------------------- */
+/*------------------ Header Start ----------------*/
+/* ---------------------------------------------- */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    padding: 0.2rem;
+    z-index: 1;
+}
+
+.header .logo {
+    margin-left: 2rem;
+}
+
+.header .logo img {
+    width: 90px;
+    height: 90px;
+}
+
+.navbar ul li {
+    display: inline-block;
+    list-style: none;
+}
+
+.navbar ul li a {
+    margin: 0.5rem;
+    font-size: 1.3rem;
+    color: white;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+}
+
+.navbar ul li a:hover {
+    color: red;
+}
+
+
+.searchbar {
+    width: 100%;
+    max-width: 500px;
+    background: rgb(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 5px 15px;
+}
+
+#menu-btn {
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+#menu-btn #cross {
+    display: none;
+}
+
+.searchbar input {
+    background: transparent;
+    flex: 1;
+    border: 0;
+    outline: none;
+    padding: 10px;
+    font-size: 15px;
+    color: #cac7ff;
+}
+
+.searchbar input::placeholder {
+    color: white;
+}
+
+.searchbar button {
+    border: 0;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+/* ---------------------------------------------- */
+/*------------------ Header End ----------------*/
+/* ---------------------------------------------- */
+
+
+
+/* ---------------------------------------------- */
+/*------- Header Mobile Responsive Start ---------*/
+/* ---------------------------------------------- */
+
+@media only screen and (max-width:900px) {
+    .header .logo {
+        margin-right: 150px;
+    }
+
+    .navbar ul li a {
+        font-size: 1.2rem;
+    }
+
+    .header .logo img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .searchbar input {
+        padding: 5px;
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width:650px) {
+    .header .logo {
+        margin-right: 100px;
+    }
+
+    .navbar ul li a {
+        font-size: 1rem;
+    }
+
+    .header .logo img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .searchbar input {
+        padding: 4px;
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width:550px) {
+
+    .header {
+        flex-direction: column;
+        position: fixed;
+    }
+
+    .header .logo {
+        margin-right: 0px;
+    }
+
+    .navbar {
+        width: 100%;
+        height: 120%;
+        background-color: black;
+        position: absolute;
+        top: 0;
+        transform: translateY(-150%);
+        transition: all 0.5s linear;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .navbar ul li {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar ul li a {
+        font-size: 0.9rem;
+    }
+
+    .active .navbar {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        width: 100%;
+        height: 260px;
+        z-index: 10;
+        margin-top: 2rem;
+    }
+
+    .active #menu-btn #bar {
+        display: none;
+    }
+
+    .active #menu-btn #cross {
+        display: block;
+    }
+
+    #menu-btn {
+        display: block;
+        z-index: 999;
+    }
+
+    #menu-btn #bar,
+    #menu-btn #cross {
+        margin-left: 450px;
+        font-size: 2.5rem;
+    }
+
+    .header .logo img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .searchbar input {
+        padding: 3px;
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width:490px) {
+
+    #menu-btn #bar,
+    #menu-btn #cross {
+        margin-left: 300px;
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width:350px) {
+    .header .logo {
+        margin-right: 0px;
+    }
+
+    .navbar ul li a {
+        font-size: 0.8rem;
+    }
+
+    #menu-btn #bar,
+    #menu-btn #cross {
+        margin-left: 200px;
+    }
+
+
+    .header .logo img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .searchbar input {
+        padding: 2px;
+        font-size: 9px;
+    }
+}
+
+/* ---------------------------------------------- */
+/*------- Header Mobile Responsive End ---------*/
+/* ---------------------------------------------- */
+
+
+/* ---------------------------------------------- */
+/*-------------- Home Section Start -------------*/
+/* ---------------------------------------------- */
+
+.home {
+    padding: 0;
+    margin-top: 7rem;
+    }
+
+
+.home .slider {
+    height: 100vh;
+    background-size: cover !important;
+    background-position: center !important;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.home .slider .content {
+    width: 60rem;
+    margin-left: 0.5rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.home .slider .content span {
+    font-size: 2rem;
+    color: red;
+}
+
+.home .slider .content h3 {
+    font-size: 3rem;
+    color: white;
+}
+
+.home .slider .content .span1{
+    font-size: 2rem;
+    color: red;
+    font-weight: bolder;
+    background-color: rgb(0, 0, 0, 0.9);
+    border-radius:  5rem;
+    padding: 0 2rem;
+}
+
+.home .slider .content .heading1 {
+    font-size:  3rem;
+    color: black;
+    padding: 1rem 0;
+}
+
+.home .slider .content .heading1 span {
+    display: inline-block;
+    color: white;
+    background-color: red;
+    border-radius: 40%;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 1s linear;
+}
+
+.home .slider .content .heading1 span:hover {
+    transform: rotate(360deg);
+}
+
+.home .slider .content .para1{
+    color: #DF7F14;
+    font-weight: bold;
+    background-color: rgb(0, 0, 0, 0.9);
+    font-size: 2rem;
+    padding: 1rem 0;
+    border-radius: 10%;
+    display: inline-block;
+}
+
+
+.home .slider .content .btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    padding-right: 2.5rem;
+    background-color: red;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom-right-radius: 50%;
+}
+
+.home .slider .content .para2{
+    font-size: 1rem;
+    margin-left: 28rem;
+    display: inline;
+    background-color: rgb(0, 0, 0, 0.9);
+    color: red;
+}
+
+.home .slider .content .btn:hover {
+    transform: scale(1.2);
+}
+
+.home .home-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.home .home-slider figure {
+    width: 500%;
+    position: relative;
+    margin: 0;
+    animation: slider 15s infinite;
+}
+
+
+.home .home-slider figure .slider {
+    width: 20%;
+    float: left;
+}
+
+@keyframes slider {
+
+    0% {
+        left: 0;
+    }
+
+    15% {
+        left: 0;
+    }
+
+    30% {
+        left: -100%;
+    }
+
+    45% {
+        left: -100%;
+    }
+
+    60% {
+        left: -200%;
+    }
+
+    70% {
+        left: -200%;
+    }
+
+    80% {
+        left: -300%;
+    }
+
+    90% {
+        left: -300%;
+    }
+
+    100% {
+        left: 0%;
+    }
+}
+
+/* ---------------------------------------------- */
+/*-------------- Home Section End -------------*/
+/* ---------------------------------------------- */
+
+
+/* ---------------------------------------------- */
+/*---------- Home Section Mobile Start -----------*/
+/* ---------------------------------------------- */
+
+@media only screen and (max-width: 900px) {
+
+    .home {
+        margin-top: 6rem;
+    }
+
+    .home .slider .content {
+        width: 50rem;
+    }
+
+    .home .slider .content span {
+        font-size: 1.8rem;
+    }
+
+    .home .slider .content h3 {
+        font-size: 2.6rem;
+
+    }
+
+    .home .slider .content .btn {
+        margin-top: 1 rem;
+        padding: 1rem 2.5rem;
+        padding-right: 2.7rem;
+        font-size: 1.1rem;
+    }
+
+    .home .slider .content .span1{
+        font-size: 1.5rem;
+        padding: 0 2rem;
+    }
+    
+    .home .slider .content .heading1 {
+        font-size:  2.5rem;
+        padding: 1rem 0;
+    }
+    
+    .home .slider .content .heading1 span {
+        padding: 1rem;
+    }
+
+    .home .slider .content .para1{
+        font-size: 1.5rem;
+        padding: 1rem 0;
+    }
+    .home .slider .content .para2{
+        font-size: 1rem;
+        margin-left: 15rem;
+    }
+}
+
+
+@media only screen and (max-width: 650px) {
+
+    .home .slider .content span {
+        font-size: 1.6rem;
+    }
+
+    .home .slider .content h3 {
+        font-size: 2.3rem;
+
+    }
+
+    .home .slider .content .btn {
+        margin-top: 1rem;
+        padding: 1rem 2.2rem;
+        padding-right: 2.4rem;
+        font-size: 1rem;
+    }
+    .home .slider .content .span1{
+        font-size: 1.3rem;
+        padding: 0 1.8rem;
+    }
+    
+    .home .slider .content .heading1 {
+        font-size:  2.3rem;
+        padding: 1rem 0;
+    }
+    
+    .home .slider .content .heading1 span {
+        padding: 1rem;
+    }
+
+    .home .slider .content .para1{
+        font-size: 1.4rem;
+        padding: 1rem 0;
+    }
+
+    .home .slider .content .para2{
+        font-size: 0.8rem;
+        margin-left: 12rem;
+    }
+}
+
+
+@media only screen and (max-width: 550px) {
+    .home .slider .home {
+        margin-top: 15rem;
+    }
+
+    .home .slider .home .slider .content {
+        width: 30rem;
+        margin-bottom: 5rem;
+    }
+
+    .home .slider .content span {
+        font-size: 1.3rem;
+    }
+
+    .home .slider .content h3 {
+        font-size: 2rem;
+
+    }
+
+    .home .slider .content .btn {
+        margin-top: 1rem;
+        padding: 1rem 2rem;
+        padding-right: 2.1rem;
+        font-size: 0.9rem;
+    }
+
+    .home .slider .content .span1{
+        font-size: 1.1rem;
+        padding: 0 1.6rem;
+    }
+    
+    .home .slider .content .heading1 {
+        font-size:  2rem;
+        padding: 0.9rem 0;
+    }
+    
+    .home .slider .content .heading1 span {
+        padding: 1rem;
+    }
+
+    .home .slider .content .para1{
+        font-size: 1.2rem;
+        padding: 1rem 0;
+    }
+
+    .home .slider .content .para2{
+        font-size: 0.7rem;
+        margin-left: 5rem;
+    }
+}
+
+
+@media only screen and (max-width: 350px) {
+    .home .slider .content {
+        width: 25rem;
+        margin-bottom: 6rem;
+        margin-left: 0rem;
+        margin-top: 5rem;
+    }
+
+    .home .slider .content span {
+        font-size: 1rem;
+    }
+
+    .home .slider .content h3 {
+        font-size: 1.5rem;
+
+    }
+
+    .home .slider .content .btn {
+        padding: 0.6rem 1.5rem;
+        padding-right: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .home .slider .content .span1{
+        font-size: 1rem;
+        padding: 0 1.4rem;
+    }
+    
+    .home .slider .content .heading1 {
+        font-size:  1.5rem;
+        padding: 0.7rem 0;
+    }
+    
+    .home .slider .content .heading1 span {
+        padding: 0.7rem;
+    }
+
+    .home .slider .content .para1{
+        font-size: 0.8rem;
+        padding: 0.4rem 0;
+    }
+    .home .slider .content .para2{
+        font-size: 0.7rem;
+        margin-left: 6rem;
+    }
+}
+
+
+/* ---------------------------------------------- */
+/*---------- Home Section Mobile Start -----------*/
+/* ---------------------------------------------- */
+
+
+/* ---------------------------------------------- */
+/*---------------About Section Start --------------*/
+/* ---------------------------------------------- */
+
+.about {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.about .image1 {
+    flex: 0.5 1 25rem;
+    position: relative;
+}
+
+.about .image1::before,
+.about .image1::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background-color: red;
+    height: 15rem;
+    width: 15rem;
+}
+
+.about .image1::before {
+    top: 8rem;
+    left: 3rem;
+}
+
+.about .image1::after {
+    bottom: 3.5rem;
+    right: 3rem;
+}
+
+.about .image1 img {
+    width: 100%;
+    margin-top: 5rem;
+    padding: 4rem;
+}
+
+.about .content {
+    flex: 1 1 20rem;
+    margin-top: 1.7rem;
+}
+
+.about .content span {
+    font-size: 2rem;
+    color: red;
+    border: 2px solid white;
+    border-radius: 5rem 2rem;
+    width: 9rem;
+    padding: 0 0.4rem;
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+}
+
+.about .content .title {
+    font-size: 1.7rem;
+    color: #D1740D;
+}
+
+.about .content p {
+    font-size: 1rem;
+    color: white;
+    padding: 1rem 1rem 1rem 0;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    text-align: justify;
+    /* font-family: 'Tiro Devanagari Sanskrit', serif; */
+}
+
+.about .content .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.about .content .box-container .box {
+    flex: 1 1 20rem;
+}
+
+.about .content .box-container .box h3 {
+    font-size: 1.5rem;
+    color: #D1740D;
+}
+
+.about .content .box-container .box h3 i {
+    padding-right: 1.5rem;
+    color: red;
+}
+
+.about .content .btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.3rem 1.5rem;
+    background-color: red;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom-right-radius: 50%;
+    letter-spacing: 2px;
+}
+
+
+.about .content .btn:hover {
+    transform: scale(1.1);
+}
+
+/* ---------------------------------------------- */
+/*---------------About Section End --------------*/
+/* ---------------------------------------------- */
+
+
+/* ---------------------------------------------- */
+/*----------About Section Mobile Start -----------*/
+/* ---------------------------------------------- */
+
+@media only screen and (max-width:1000px) {
+    .about {
+        margin-top: -15rem;
+    }
+    .about .content {
+        flex: 1 1 15rem;
+        margin-top: 20.7rem;
+    }
+
+    .about .content span {
+        font-size: 1.3rem;
+    }
+
+    .about .content .title {
+        font-size: 1.8rem;
+    }
+
+    .about .content p {
+        font-size: 0.7rem;
+        color: white;
+        padding: 0.4rem 0;
+        line-height: 1.2;
+    }
+
+    .about .content .box-container {
+        display: flex;
+        flex-wrap: wrap;
+        /* gap: 0.5rem; */
+        margin-top: 1.8rem;
+    }
+
+    .about .content .box-container .box {
+        flex: 1 1 20rem;
+    }
+
+    .about .content .box-container .box h3 {
+        font-size: 1.2rem;
+        color: #D1740D;
+    }
+
+    .about .content .box-container .box h3 i {
+        padding-right: 1.4rem;
+        color: red;
+    }
+}
+
+@media only screen and (max-width:900px) {
+    .about {
+        margin-top: -25rem;
+    }
+
+    .about .content {
+        margin-top: 25.7rem;
+    }
+}
+
+@media only screen and (max-width:800px) {
+    .about .content {
+        margin-top: 30.7rem;
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .about {
+        margin-top: 1rem;
+    }
+
+    .about .content {
+        padding: 1rem;
+        margin-top: -100px;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .about .image1::before,
+    .about .image1::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        background-color: red;
+        height: 13rem;
+        width: 13rem;
+    }
+
+    .about .content .title {
+        font-size: 1.4rem;
+    }
+
+    .about .content p {
+        font-size: 0.7rem;
+        color: white;
+        padding: 0.4rem 0;
+        /* word-spacing: 1px; */
+        line-height: 2;
+    }
+
+    .about .content .box-container .box h3 {
+        font-size: 1.1rem;
+        color: #D1740D;
+    }
+    
+    .about .content .box-container .box h3 i {
+        padding-right: 1.2rem;
+        color: red;
+    }
+
+    .about .content .box-container .box p {
+        font-size: 0.7rem;
+    }
+
+}
+
+@media only screen and (max-width:400px) {
+    .about .image1::before,
+    .about .image1::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        background-color: red;
+        height: 11rem;
+        width: 11rem;
+    }
+}
+
+@media only screen and (max-width:350px) {
+    .about .image1::before,
+    .about .image1::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        background-color: red;
+        height: 9rem;
+        width: 9rem;
+    }
+}
+
+/* ---------------------------------------------- */
+/*----------About Section Mobile End -----------*/
+/* ---------------------------------------------- */
+
+
+/* ---------------------------------------------- */
+/*----------Feature Section Start -----------*/
+/* ---------------------------------------------- */
+
+.features{
+    padding: 5rem;
+    margin-top: -5rem;
+}
+
+.features .heading{
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 3.5rem;
+    position: relative;
+}
+
+.heading::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 0.1rem;
+    width: 100%;
+    background-color: white;
+    z-index: -1;
+}
+
+.heading span{
+    font-size: 1.4rem;
+    color: red;
+    background-color: black;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid white;
+    border-radius: 5rem 2rem;
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 2px;
+} 
+
+.features .box-container{
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.features .box-container .box{
+    padding: 0rem;
+    width: 18rem;
+    margin: 0.5rem;
+}
+
+.features .box-container .box .image{
+    width: 15rem;
+    height: 10rem;
+    border-radius: 1rem;
+    margin-left: 2rem;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px 3px white;
+}
+
+.features .box-container .box img{
+    width: 15rem;
+    height: 10rem;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+.features .box-container .box img:hover{
+    transform: scaleX(1.1);
+}
+
+.features .box-container .box .content {
+    margin-left: 1rem;
+}
+
+.features .box-container .box .content h3{
+    text-align: center;
+    font-size: 1.5rem;
+    color: #D1740D;
+    margin-top: 2rem;
+}
+
+.features .box-container .box .content p{
+    font-size: 1rem;
+    color: white;
+    margin-top: 2rem;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    margin-left: 2rem;
+    /* font-family: 'Tiro Devanagari Sanskrit', serif; */
+}
+
+.features .box-container .box .content .btn1 {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.3rem 1.5rem;
+    background-color: red;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom-right-radius: 50%;
+    letter-spacing: 2px;
+    margin-left: 3rem;
+}
+
+.features .box-container .box .content .btn1:hover {
+    transform: translateY(20%);
+}
+
+/* ---------------------------------------------- */
+/*----------Feature Section End -----------*/
+/* ---------------------------------------------- */
+
+
+/* ---------------------------------------------- */
+/*----------Feature Section Mobile Start -----------*/
+/* ---------------------------------------------- */
+
+
+@media only screen and (max-width: 500px) {
+    .features .heading{
+        text-align: center;
+        margin-bottom: 2rem;
+        margin-top: 3.5rem;
+        position: relative;
+    }
+    
+    .heading::before{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        height: 0.1rem;
+        width: 100%;
+    }
+    
+    .heading span{
+        font-size: 1rem;
+        padding: 0.5rem 1.5rem;
+        border: 2px solid white;
+        border-radius: 5rem 2rem;
+    }
+    .features .box-container .box .image{
+        width: 13rem;
+        height: 8rem;
+        border-radius: 1rem;
+        margin-left: 2rem;
+    }
+    .features .box-container .box img{
+        width: 13rem;
+        height: 8rem;
+        border-radius: 1rem;
+        object-fit: cover;
+    }
+    .features .box-container .box .content p{
+        font-size: 0.8rem;
+        margin-top: 2rem;
+        line-height: 1.5;
+        letter-spacing: 2px;
+        margin-left: 2rem;
+        
+    }
+    .features .box-container .box .content .btn1 {
+        margin-top: 1rem;
+        padding: 0.3rem 1.5rem;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        border-bottom-right-radius: 50%;
+        margin-left: 3rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .features .heading{
+        text-align: center;
+        margin-bottom: 1.8rem;
+        margin-top: 3rem;
+        position: relative;
+    }
+    
+    .heading::before{
+        top: 50%;
+        left: 0;
+        height: 0.1rem;
+        width: 100%;
+    }
+    
+    .heading span{
+        font-size: 0.7rem;
+        padding: 0.2rem 1.2rem;
+        border: 2px solid white;
+        border-radius: 5rem 2rem;
+    }
+    .features .box-container .box .content .btn1 {
+        margin-left: 1rem;
+    }
+}
+
+/* ---------------------------------------------- */
+/*----------Feature Section Mobile End -----------*/
+/* ---------------------------------------------- */
+
+
+
+/* ---------------------------------------------- */
+/*------------Category Section Start -------------*/
+/* ---------------------------------------------- */
+
+.category{
+    padding: 5rem;
+    margin-top: -5rem;
+}
+
+.category .heading{
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 3.5rem;
+    position: relative;
+}
+
+.category .heading::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 0.1rem;
+    width: 100%;
+    background-color: white;
+    z-index: -1;
+}
+
+.category .heading span{
+    font-size: 1.4rem;
+    color: red;
+    background-color: black;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid white;
+    border-radius: 5rem 2rem;
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 2px;
+} 
+
+/* .category .box-container{
+    padding: 0.1rem;
+} */
+
+.category .box-container .box{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-around;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.category .box-container .box .image{
+    width: 24rem;
+    height: 14rem;
+    border-radius: 1rem;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px 3px white;
+}
+
+.category .box-container .box img{
+    width: 24rem;
+    height: 14rem;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+.category .box-container .box .photo1:hover{
+    transform: rotate(10deg);
+}
+
+.category .box-container .box .photo2:hover{
+    transform: rotate(-10deg);
+}
+
+.category .box-container .box .content {
+    width: 40rem;
+}
+
+.category .box-container .box .content h3{
+    text-align: center;
+    font-size: 1.5rem;
+    color: #D1740D;
+    margin-top: 2rem;
+}
+
+.category .box-container .box .content p{
+    font-size: 1rem;
+    color: white;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    /* font-family: 'Tiro Devanagari Sanskrit', serif; */
+}
+
+.category .box-container .box .content .btn1 {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.3rem 1.5rem;
+    background-color: red;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom-right-radius: 50%;
+    letter-spacing: 2px;
+}
+
+.category .box-container .box .content .btn1:hover {
+    transform: translateY(20%);
+}
+
+/* ---------------------------------------------- */
+/*--------------Category Section End -------------*/
+/* ---------------------------------------------- */
+
+/* ---------------------------------------------- */
+/*---------Category Section Mobile Start ---------*/
+/* ---------------------------------------------- */
+
+@media only screen and (max-width: 550px) {
+    .category{
+        padding: 3rem;
+        margin-top: -8rem;
+    }
+    
+    .category .heading{
+        margin-bottom: 2rem;
+        margin-top: 3.5rem;
+    }
+    
+    
+    .category .heading span{
+        font-size: 1.2rem;
+        padding: 0.4rem 1.4rem;
+        border-radius: 5rem 2rem;
+        letter-spacing: 2px;
+    } 
+    
+    
+    .category .box-container .box{
+        margin: 4rem 0;
+    }
+    
+    .category .box-container .box .image{
+        width: 18rem;
+        height: 10rem;
+        border-radius: 1rem;
+    }
+    
+    .category .box-container .box img{
+        width: 18rem;
+        height: 10rem;
+        border-radius: 1rem;
+    }
+    
+    .category .box-container .box .content {
+        width: 40rem;
+    }
+    
+    .category .box-container .box .content h3{
+        text-align: center;
+        font-size: 1.3rem;
+        margin-top: 2rem;
+    }
+    
+    .category .box-container .box .content p{
+        font-size: 0.8rem;
+        line-height: 1.5;
+        letter-spacing: 2px;
+    }
+    
+    .category .box-container .box .content .btn1 {
+        margin-top: 1rem;
+        display: inline-block;
+        padding: 0.3rem 1.5rem;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+        border-radius: 5px;
+        border-bottom-right-radius: 50%;
+    }
+    
+}
+
+@media only screen and (max-width: 400px) {
+    .category{
+        padding: 2rem;
+        margin-top: -8rem;
+    }
+    
+    .category .heading{
+        margin-bottom: 2rem;
+        margin-top: 3.5rem;
+    }
+    
+    
+    .category .heading span{
+        font-size: 1rem;
+        padding: 0.3rem 1.2rem;
+        border-radius: 5rem 2rem;
+        letter-spacing: 2px;
+    } 
+    
+    
+    .category .box-container .box{
+        margin: 4rem 0;
+    }
+    
+    .category .box-container .box .image{
+        width: 15rem;
+        height: 8rem;
+        border-radius: 1rem;
+    }
+    
+    .category .box-container .box img{
+        width: 15rem;
+        height: 8rem;
+        border-radius: 1rem;
+    }
+    
+    .category .box-container .box .content {
+        width: 40rem;
+    }
+    
+    .category .box-container .box .content h3{
+        text-align: center;
+        font-size: 1.3rem;
+        margin-top: 2rem;
+    }
+    
+    .category .box-container .box .content p{
+        font-size: 0.7rem;
+        line-height: 1.5;
+        letter-spacing: 2px;
+    }
+    
+    .category .box-container .box .content .btn1 {
+        margin-top: 1rem;
+        display: inline-block;
+        padding: 0.3rem 1.5rem;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+        border-radius: 5px;
+        border-bottom-right-radius: 50%;
+    }
+    
+}
+
+/* ---------------------------------------------- */
+/*----------Category Section Mobile End ----------*/
+/* ---------------------------------------------- */
+
+
+
+
+/* ---------------------------------------------- */
+/*----------Precaution Section start -----------*/
+/* ---------------------------------------------- */
+
+.precaution{
+    padding: 5rem;
+    margin-top: -5rem;
+}
+
+.precaution .heading{
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 3.5rem;
+    position: relative;
+}
+
+.precaution .heading::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 0.1rem;
+    width: 100%;
+    background-color: white;
+    z-index: -1;
+}
+
+.precaution .heading span{
+    font-size: 1.4rem;
+    color: red;
+    background-color: black;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid white;
+    border-radius: 5rem 2rem;
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 2px;
+} 
+
+/* .precaution .box-container{
+    padding: 0.1rem;
+} */
+
+.precaution .box-container .box{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-around;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.precaution .box-container .box .image{
+    width: 24rem;
+    height: 14rem;
+    border-radius: 1rem;
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px 3px white;
+}
+
+.precaution .box-container .box img{
+    width: 24rem;
+    height: 14rem;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+.precaution .box-container .box img:hover{
+    transform: scale(1.1);
+}
+
+
+.precaution .box-container .box .content {
+    width: 40rem;
+}
+
+.precaution .box-container .box .content h3{
+    text-align: center;
+    font-size: 1.5rem;
+    color: #D1740D;
+    margin-top: 2rem;
+}
+
+.precaution .box-container .box .content p{
+    font-size: 1rem;
+    color: white;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    /* font-family: 'Tiro Devanagari Sanskrit', serif; */
+}
+
+.precaution .box-container .box .content .btn1 {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.3rem 1.5rem;
+    background-color: red;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom-right-radius: 50%;
+    letter-spacing: 2px;
+}
+
+.precaution .box-container .box .content .btn1:hover {
+    transform: translateY(20%);
+}
+
+/* ---------------------------------------------- */
+/*------------Precaution Section End -------------*/
+/* ---------------------------------------------- */
+
+/* ---------------------------------------------- */
+/*-------Precaution Section Mobile start ---------*/
+/* ---------------------------------------------- */
+
+@media only screen and (max-width: 550px) {
+    .precaution{
+        padding: 3rem;
+        margin-top: -8rem;
+    }
+    
+    .precaution .heading{
+        margin-bottom: 2rem;
+        margin-top: 3.5rem;
+    }
+    
+    
+    .precaution .heading span{
+        font-size: 1.2rem;
+        padding: 0.4rem 1.4rem;
+        border-radius: 5rem 2rem;
+        letter-spacing: 2px;
+    } 
+    
+    
+    .precaution .box-container .box{
+        margin: 4rem 0;
+    }
+    
+    .precaution .box-container .box .image{
+        width: 18rem;
+        height: 10rem;
+        border-radius: 1rem;
+    }
+    
+    .precaution .box-container .box img{
+        width: 18rem;
+        height: 10rem;
+        border-radius: 1rem;
+    }
+    
+    .precaution .box-container .box .content {
+        width: 40rem;
+    }
+    
+    .precaution .box-container .box .content h3{
+        text-align: center;
+        font-size: 1.3rem;
+        margin-top: 2rem;
+    }
+    
+    .precaution .box-container .box .content p{
+        font-size: 0.8rem;
+        line-height: 1.5;
+        letter-spacing: 2px;
+    }
+    
+    .precaution .box-container .box .content .btn1 {
+        margin-top: 1rem;
+        display: inline-block;
+        padding: 0.3rem 1.5rem;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+        border-radius: 5px;
+        border-bottom-right-radius: 50%;
+    }
+    
+}
+
+@media only screen and (max-width: 400px) {
+    .precaution{
+        padding: 2rem;
+        margin-top: -8rem;
+    }
+    
+    .precaution .heading{
+        margin-bottom: 2rem;
+        margin-top: 3.5rem;
+    }
+    
+    
+    .precaution .heading span{
+        font-size: 1rem;
+        padding: 0.3rem 1.2rem;
+        border-radius: 5rem 2rem;
+        letter-spacing: 2px;
+    } 
+    
+    
+    .precaution .box-container .box{
+        margin: 4rem 0;
+    }
+    
+    .precaution .box-container .box .image{
+        width: 15rem;
+        height: 8rem;
+        border-radius: 1rem;
+    }
+    
+    .precaution .box-container .box img{
+        width: 15rem;
+        height: 8rem;
+        border-radius: 1rem;
+    }
+    
+    .precaution .box-container .box .content {
+        width: 40rem;
+    }
+    
+    .precaution .box-container .box .content h3{
+        text-align: center;
+        font-size: 1.3rem;
+        margin-top: 2rem;
+    }
+    
+    .precaution .box-container .box .content p{
+        font-size: 0.7rem;
+        line-height: 1.5;
+        letter-spacing: 2px;
+    }
+    
+    .precaution .box-container .box .content .btn1 {
+        margin-top: 1rem;
+        display: inline-block;
+        padding: 0.3rem 1.5rem;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+        border-radius: 5px;
+        border-bottom-right-radius: 50%;
+    }
+    
+}
+
+/* ---------------------------------------------- */
+/*-------Precaution Section Mobile End -----------*/
+/* ---------------------------------------------- */
+
+
+
+/* ---------------------------------------------- */
+/*----------- Pricing Section Start --------------*/
+/* ---------------------------------------------- */
+
+.pricing{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    padding: 5rem 5rem 0rem 5rem;
+    margin-top: -5rem;
+}
+
+.pricing .information{
+    width: 30rem;
+    padding: 2rem;
+}
+
+.pricing .information span{
+    font-size: 2rem;
+    color: red;
+    border: 2px solid white;
+    border-radius: 5rem 2rem;
+    padding: 0 1rem;
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 1px;
+}
+
+
+.pricing .information h3{
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    color: #D1740D;
+    margin-left: 0.5rem;
+}
+
+.pricing .information p{
+    padding: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.3;
+    letter-spacing: 2px;
+    color: white;
+    /* font-family: 'Tiro Devanagari Sanskrit', serif; */
+}
+
+.pricing .information p i{
+    padding-right: 0.5rem;
+    color: red;
+}
+
+.pricing .information p a{
+    /* padding-right: 0.5rem; */
+    color: white;
+}
+
+.pricing .plan{
+    text-align: center;
+    padding: 1rem;
+    padding-top: 5rem;
+    line-height: 1.7;
+    letter-spacing: 2px;
+}
+
+.pricing .plan h3{
+    font-size: 1.5rem;
+    color: #D1740D;
+}
+
+
+.pricing .plan .price{
+    font-size: 2rem;
+    font-weight: bold;
+    color: red;
+}
+
+.pricing .plan .price span{
+    color: #D1740D;
+    font-size: 1rem;
+}
+
+
+.pricing .plan .list{
+    text-align: left;
+
+}
+.pricing .plan .list p{
+    line-height: 1.3;
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: white;
+    /* font-family: 'Tiro Devanagari Sanskrit', serif; */
+}
+
+
+.pricing .plan .list p i{
+    padding-right: 0.5rem;
+    color: red;
+}
+
+.pricing .information .btn1,
+.pricing .plan .btn1 {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.3rem 1.5rem;
+    background-color: red;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom-right-radius: 50%;
+    letter-spacing: 2px;
+}  
+
+.pricing .information .btn1:hover,
+.pricing .plan .btn1:hover {
+    transform: translateY(20%);
+}
+
+/* ---------------------------------------------- */
+/*----------- Pricing Section End ----------------*/
+/* ---------------------------------------------- */
+
+
+/* ---------------------------------------------- */
+/*---------- Pricing Section Mobile Start --------*/
+/* ---------------------------------------------- */
+
+@media only screen and (max-width: 900px) {
+    .pricing{
+        gap: 3rem;
+        padding: 3rem;
+        margin-top: 3rem;
+    }
+    
+    .pricing .information{
+        width: 28rem;
+        padding: 2rem;
+    }
+    
+    .pricing .information span{
+        font-size: 1.5rem;
+        border-radius: 5rem 2rem;
+        padding: 0 1rem;
+    }
+    
+    
+    .pricing .information h3{
+        font-size: 1.3rem;
+        padding-top: 0.4rem;
+    }
+    
+    .pricing .information p{
+        line-height: 2;
+        padding: 0.4rem;
+        font-size: 0.9rem;
+    }
+    
+    .pricing .information p i{
+        padding-right: 0.4rem;
+    }
+    
+    
+    .pricing .plan{
+        text-align: center;
+        padding: 1rem;
+        padding-top: 3.2rem;
+    }
+    
+    .pricing .plan h3{
+        font-size: 1.5rem;
+    }
+    
+    
+    .pricing .plan .price{
+        font-size: 1.8rem;
+    }
+    
+    .pricing .plan .price span{
+        font-size: 0.9rem;
+    }
+    
+
+    .pricing .plan .list p{
+        line-height: 2;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    
+    
+    .pricing .plan .list p i{
+        padding-right: 0.5rem;
+    }
+    
+    .pricing .information .btn1,
+    .pricing .plan .btn1 {
+        margin-top: 0.9rem;
+        padding: 0.3rem 1.3rem;
+        font-size: 1.1rem;
+    } 
+}
+
+
+@media only screen and (max-width: 550px) {
+    .pricing{
+        gap: 3rem;
+        padding: 3rem;
+        margin-top: 5rem;
+    }
+    
+    .pricing .information{
+        width: 26rem;
+        padding: 1.8rem;
+    }
+    
+    .pricing .information span{
+        font-size: 1.3rem;
+        border-radius: 5rem 2rem;
+        padding: 0 0.9rem;
+    }
+    
+    
+    .pricing .information h3{
+        font-size: 1.1rem;
+        padding-top: 0.3rem;
+    }
+    
+    .pricing .information p{
+        line-height: 1.5;
+        padding: 0.3rem;
+        font-size: 0.7rem;
+    }
+    
+    .pricing .information p i{
+        padding-right: 0.4rem;
+    }
+    
+    
+    .pricing .plan{
+        text-align: center;
+        padding: 0.9rem;
+        padding-top: 3rem;
+    }
+    
+    .pricing .plan h3{
+        font-size: 1.3rem;
+    }
+    
+    
+    .pricing .plan .price{
+        font-size: 1.6rem;
+    }
+    
+    .pricing .plan .price span{
+        font-size: 0.7rem;
+    }
+    
+
+    .pricing .plan .list p{
+        line-height: 1.5;
+        padding: 0.5rem;
+        font-size: 0.7rem;
+    }
+    
+    
+    .pricing .plan .list p i{
+        padding-right: 0.5rem;
+    }
+    
+    .pricing .information .btn1,
+    .pricing .plan .btn1 {
+        margin-top: 0.8rem;
+        padding: 0.3rem 1.2rem;
+        font-size: 1rem;
+    } 
+}
+
+@media only screen and (max-width: 400px) {
+    .pricing{
+        gap: 3rem;
+        padding: 3rem;
+        margin-top: 0rem;
+    }
+
+    .pricing .plan{
+        text-align: center;
+        padding: 0.9rem;
+        padding-top: 2rem;
+        margin-left: 1rem;
+    }
+}
+
+/* ---------------------------------------------- */
+/*---------- Pricing Section Mobile End ----------*/
+/* ---------------------------------------------- */
+
+
+
+/* ---------------------------------------------- */
+/*-------------- Banner Section Start ------------*/
+/* ---------------------------------------------- */
+
+.banner{
+    background:  url(../../raw/jpg/photo_banner1.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 0.4rem 0;
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    letter-spacing: 2px;
+}
+
+.banner .image span{
+    font-size: 1.8rem;
+    color: red;
+    font-weight: bold;
+    background-color: rgb(0,0,0,0.8);
+    border-radius: 2px solid red;
+    border-radius: 3rem ;
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 2px;
+}
+
+.banner .image h3{
+    color: white;
+    font-size: 1.2rem;
+    margin: 1rem;
+}
+
+.banner .image h3 span{
+    padding: 0.2rem 1.2rem;
+    display: inline-block;
+    background-color: red;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 1s linear;
+}
+
+.banner .image h3 span:hover {
+    transform: rotate(360deg);
+}
+
+.banner .image .para1{
+    margin: 0.2rem auto;
+    max-width: 100rem;
+    font-size: 1.2rem;
+    color: #D1740D;
+    line-height: 0;
+    /* font-family: 'Tiro Devanagari Sanskrit', serif; */
+}
+
+.banner  .para2{
+    font-size: 1.2rem;
+    margin-left: 70rem;
+    display: inline;
+    background-color: rgb(0, 0, 0, 0.9);
+    color: red;
+}
+
+.banner .image .btn1{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.3rem 1.5rem;
+    background-color: red;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom-right-radius: 50%;
+}  
+
+.banner .image .btn1:hover {
+    transform: translateX(20%);
+}
+
+/* ---------------------------------------------- */
+/*-------------- Banner Section End --------------*/
+/* ---------------------------------------------- */
+
+/* ---------------------------------------------- */
+/*---------- Banner Section Mobile Start ---------*/
+/* ---------------------------------------------- */
+
+@media only screen and (max-width: 550px) {
+    .banner .image span{
+        font-size: 1.4rem;
+        border-radius: 3rem ;
+        letter-spacing: 2px;
+    }
+    .banner .image h3{
+        font-size: 1rem;
+        margin: 1rem;
+    }
+    
+    .banner .image h3 span{
+        padding: 0.2rem 1.2rem;
+        font-size: 1rem;
+    }
+
+    .banner .image p{
+        margin: 0.2rem auto;
+        max-width: 100rem;
+        font-size: 1rem;
+        line-height: 1;
+
+    }
+    .banner .image .btn1{
+        margin-top: 1rem;
+        display: inline-block;
+        padding: 0.3rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 5px;
+        border-bottom-right-radius: 50%;
+    } 
+    .banner  .para2{
+        font-size: 0.7rem;
+        margin-left: 70rem;
+    }
+}
+
+/* ---------------------------------------------- */
+/*---------- Banner Section Mobile End ----------*/
+/* ---------------------------------------------- */
+
+
+
+
+/* ---------------------------------------------- */
+/*------------ Trainers Section Start ------------*/
+/* ---------------------------------------------- */
+
+
+.trainers{
+    padding: 5rem;
+    margin-top: -5rem;
+}
+
+.trainers .heading{
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 3.5rem;
+    position: relative;
+}
+
+.trainers .heading::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 0.1rem;
+    width: 100%;
+    background-color: white;
+    z-index: -1;
+}
+
+.trainers .heading span{
+    font-size: 1.4rem;
+    color: red;
+    background-color: black;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid white;
+    border-radius: 5rem 2rem;
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 2px;
+} 
+
+.trainers .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    padding: 2rem;
+} 
+
+.trainers .box-container .box{
+    width: 18rem;
+    height: 30rem;
+    overflow: hidden;
+    position: relative;
+    padding-top: 1rem;
+}
+
+.trainers .box-container .box .image{
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    margin-left: 2rem;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px 5px red;
+}
+
+.trainers .box-container .box img{
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+}
+
+.trainers .box-container .box img:hover{
+    transform: scale(1.1);
+}
+
+.trainers .box-container .box .content{
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 3rem 0 ;
+    line-height: 1.5;
+    letter-spacing: 2px;
+}
+
+.trainers .box-container .box .content span{
+    font-size: 1.2rem;
+    color: red;
+    text-align: center;
+    margin-left: 4.5rem;
+}
+
+.trainers .box-container .box .content .span1{
+    font-size: 1.2rem;
+    color: red;
+    text-align: center;
+    margin-left: 2rem;
+}
+
+.trainers .box-container .box .content h3{
+    font-size: 1.5rem;
+    color: #D1740D;
+    margin-left: 4rem;
+}
+
+.trainers .box-container .box .content .head1{
+    font-size: 1.5rem;
+    color: #D1740D;
+    margin-left: 3rem;
+}
+
+
+.trainers .box-container .box .content .head2{
+    font-size: 1.5rem;
+    color: #D1740D;
+    margin-left: 4.5rem;
+}
+
+.trainers .box-container .box .content .share p{
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    /* font-family: 'Tiro Devanagari Sanskrit', serif; */
+}
+
+
+/* ---------------------------------------------- */
+/*------------ Trainers Section End --------------*/
+/* ---------------------------------------------- */
+
+
+/* ---------------------------------------------- */
+/*--------- Trainers Section Mobile Start --------*/
+/* ---------------------------------------------- */
+
+@media only screen and (max-width: 900px) {
+
+    .trainers{
+        padding: 4rem;
+        margin-top: -3rem;
+    }
+    
+    .trainers .heading{
+        margin-bottom: 2rem;
+        margin-top: 3.5rem;
+    }
+    
+    
+    .trainers .heading span{
+        font-size: 1.2rem;
+        padding: 0.4rem 1.4rem;
+    }
+
+    .trainers .box-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 0.5rem;
+    } 
+
+    .trainers .box-container .box{
+        width: 17rem;
+        height: 26rem;
+    }
+    
+    .trainers .box-container .box .image{
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        margin-left: 2rem;
+        overflow: hidden;
+    }
+    
+    .trainers .box-container .box img{
+        height: 10rem;
+        width: 10rem;
+    }
+    
+    .trainers .box-container .box img:hover{
+        transform: scale(1.1);
+    }
+    
+    .trainers .box-container .box .content{
+        position: absolute;
+        left: 0;
+        right: 40px;
+        padding: 1rem;
+    }
+    
+    .trainers .box-container .box .content span{
+        font-size: 1.1rem;
+        color: red;
+        text-align: center;
+        margin-left: 4rem;
+    }
+    
+    .trainers .box-container .box .content .span1{
+        font-size: 1.1rem;
+        color: red;
+        text-align: center;
+        margin-left: -0.6rem;
+    }
+
+    .trainers .box-container .box .content h3{
+        font-size: 1.3rem;
+    }
+
+    .trainers .box-container .box .content .head1{
+        font-size: 1.3rem;
+        margin-left: 3rem;
+    }
+    
+    
+    .trainers .box-container .box .content .head2{
+        font-size: 1.3rem;
+        margin-left: 4.5rem;
+    }
+
+    .trainers .box-container .box .content .share p{
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .trainers{
+        padding: 4rem;
+        margin-top: 5rem;
+    }
+
+    .trainers .box-container .box{
+        width: 15rem;
+        height: 25rem;
+        overflow: hidden;
+        position: relative;
+        /* border: 2px solid red; */
+        margin-left: 3rem;
+    }
+    
+    .trainers .box-container .box .image{
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        margin-left: 2rem;
+        overflow: hidden;
+        background-color: aliceblue;
+        /* box-shadow: 0px 0px 5px 3px white; */
+        /* z-index: 1; */
+    }
+    
+    .trainers .box-container .box img{
+        height: 8rem;
+        width: 8rem;
+    }
+    
+    .trainers .box-container .box img:hover{
+        transform: scale(1.1);
+    }
+    
+    .trainers .box-container .box .content{
+        position: absolute;
+        left: 0;
+        right: 40px;
+        padding: 1rem;
+    }
+    
+    .trainers .box-container .box .content span{
+        font-size: 1rem;
+        color: red;
+        text-align: center;
+        margin-left: 2rem;
+    }
+
+    .trainers .box-container .box .content .span1{
+        font-size: 1rem;
+        color: red;
+        text-align: center;
+        margin-left: -0.6rem;
+    }
+    
+    .trainers .box-container .box .content h3{
+        font-size: 1.1rem;
+    }
+
+    .trainers .box-container .box .content .head1{
+        font-size: 1.1rem;
+        margin-left: 3rem;
+    }
+    
+    
+    .trainers .box-container .box .content .head2{
+        font-size: 1.1rem;
+        margin-left: 4.5rem;
+    }
+
+    .trainers .box-container .box .content .share p{
+        font-size: 0.6rem;
+    }
+}
+
+
+@media only screen and (max-width: 450px) {
+
+    .trainers{
+        padding: 4rem;
+        margin-top: 11rem;
+    }
+    
+    .trainers .heading{
+        margin-bottom: 1.8rem;
+        margin-top: 3.2rem;
+    }
+    
+    
+    .trainers .heading span{
+        font-size: 1rem;
+        padding: 0.4rem 1.2rem;
+    }
+
+    .trainers .box-container .box{
+        width: 14rem;
+        height: 25rem;
+    }
+
+    .trainers .box-container .box .image{
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+        margin-left: 3rem;
+    }
+    
+    .trainers .box-container .box img{
+        height: 7rem;
+        width: 7rem;
+    }
+
+    .trainers .box-container .box .content{
+        position: absolute;
+        left: 0;
+        right: 40px;
+        padding: 1rem;
+        width:12rem;
+    }
+    
+    .trainers .box-container .box .content span{
+        font-size: 0.8rem;
+        color: red;
+        text-align: center;
+    }
+
+    .trainers .box-container .box .content .span1{
+        font-size: 0.8rem;
+        color: red;
+        text-align: center;
+        /* margin-left: -0.6rem; */
+    }
+    
+    .trainers .box-container .box .content h3{
+        font-size: 1rem;
+    }
+
+    .trainers .box-container .box .content .head1{
+        font-size: 1rem;
+        margin-left: 3rem;
+    }
+    
+    
+    .trainers .box-container .box .content .head2{
+        font-size: 1rem;
+        margin-left: 4.5rem;
+    }
+
+    .trainers .box-container .box .content .share p{
+        font-size: 0.6rem;
+        margin-right: 2rem;
+        width: 10rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .trainers{
+        padding: 4rem;
+        margin-top: 8rem;
+    }
+    
+    .trainers .heading{
+        margin-bottom: 1.5rem;
+        margin-top: 3rem;
+    }
+    
+    
+    .trainers .heading span{
+        font-size: 1rem;
+        padding: 0.4rem 1.2rem;
+    }
+
+    .trainers .box-container .box{
+        width: 14rem;
+        height: 25rem;
+    }
+
+    .trainers .box-container .box .image{
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+        margin-left: 2.5rem;
+    }
+    
+    .trainers .box-container .box img{
+        height: 7rem;
+        width: 7rem;
+    }
+
+    .trainers .box-container .box .content{
+        position: absolute;
+        left: 0;
+        right: 40px;
+        padding: 1rem;
+        width:12rem;
+    }
+    
+    .trainers .box-container .box .content span{
+        font-size: 0.8rem;
+        color: red;
+        text-align: center;
+    }
+    
+    .trainers .box-container .box .content h3{
+        font-size: 1rem;
+    }
+
+    .trainers .box-container .box .content .share p{
+        font-size: 0.6rem;
+        margin-right: 2rem;
+        width: 10rem;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .trainers{
+        padding: 2rem 0;
+        margin-top: 8rem;
+    }
+
+    .trainers .box-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 0;
+    } 
+    .trainers .box-container .box{
+        width: 14rem;
+        height: 20rem;
+    }
+
+    .trainers .box-container .box .content h3{
+        font-size: 0.9rem;
+    }
+}
+
+/* ---------------------------------------------- */
+/*---------- Trainers Section Mobile End ---------*/
+/* ---------------------------------------------- */
+
+
+/* ---------------------------------------------- */
+/*-------------- Review Section Start --------------*/
+/* ---------------------------------------------- */
+
+.reviews{
+    padding: 5rem;
+    margin-top: -5rem;
+}
+
+.reviews .heading{
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 3.5rem;
+    position: relative;
+}
+
+.reviews .heading::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 0.1rem;
+    width: 100%;
+    background-color: white;
+    z-index: -1;
+}
+
+.reviews .heading span{
+    font-size: 1.4rem;
+    color: red;
+    background-color: black;
+    /* padding: 0.3rem 1.5rem; */
+    border: 2px solid white;
+    border-radius: 5rem 2rem;
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 2px;
+}
+
+.reviews .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    padding: 2rem;
+} 
+
+.reviews .box-container .box{
+    width: 18rem;
+    height: 30rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.reviews .box-container .box .image{
+    height: 12rem;
+    width: 10rem;
+    border-radius: 10%;
+    margin-left: 4rem;
+    overflow: hidden;
+    margin-top: 1rem;
+    box-shadow: 0px 0px 10px 5px red;
+}
+
+.reviews .box-container .box img{
+    height: 12rem;
+    width: 10rem;
+}
+
+
+.reviews .box-container .box img:hover{
+    transform: scale(1.2);
+}
+
+.reviews .box-container .box .content{
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 3rem 0;
+    line-height: 1.5;
+    letter-spacing: 2px;
+}
+
+.reviews .box-container .box .content span{
+    font-size: 1.2rem;
+    /* font-weight: bolder; */
+    color: red;
+    text-align: center;
+    margin-left: 6.5rem;
+}
+
+.reviews .box-container .box .content .span1{
+    font-size: 1.2rem;
+    color: red;
+    text-align: center;
+    margin-left: 4.5rem;
+}
+
+.reviews .box-container .box .content .span2{
+    margin-left: 7.5rem;
+}
+
+.reviews .box-container .box .content h3{
+    font-size: 1.5rem;
+    color: #D1740D;
+    margin-left: 4rem;
+}
+
+.reviews .box-container .box .content .head1{
+    margin-left: 5rem;
+}
+
+.reviews .content .share .btn1 {
+    margin-top: 1rem;
+    display: inline-block;
+    background-color: red;
+    padding: 0.5rem 1.5rem;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom-right-radius: 50%;
+    margin-left: 4rem;
+}
+
+.reviews .box-container .box .content .share .btn1:hover {
+    transform: translateX(20%);
+}
+
+
+.reviews .box-container .box .content .share p{
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    /* font-family: 'Tiro Devanagari Sanskrit', serif; */
+}
+
+.reviews .box-container .box .content .share:hover p {
+    display: block;
+    transition: all 10s linear;
+}
+
+
+
+
+/* ---------------------------------------------- */
+/*-------------- Review Section End --------------*/
+/* ---------------------------------------------- */
+
+/* ---------------------------------------------- */
+/*---------- Review Section Mobile Start ---------*/
+/* ---------------------------------------------- */
+
+@media only screen and (max-width: 550px) {
+    .reviews{
+        padding: 4rem;
+        margin-top: -12rem;
+    }
+    
+    .reviews .heading span{
+        font-size: 1.2rem;
+        background-color: black;
+        padding: 0.5rem 1.5rem;
+        border: 2px solid white;
+        border-radius: 5rem 2rem;
+    }
+
+
+    .reviews .box-container .box{
+        width: 16rem;
+        height: 26rem;
+    }
+    
+    .reviews .box-container .box .image{
+        height: 11rem;
+        width: 9rem;
+        margin-left: 4rem;
+    }
+    
+    .reviews .box-container .box img{
+        height: 11rem;
+        width: 9rem;
+    }
+    
+    .reviews .box-container .box .content{
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding: 2rem;
+    }
+    
+    .reviews .box-container .box .content span{
+        font-size: 1rem;
+        text-align: center;
+        margin-left: 4.5rem;
+    }
+
+    .reviews .box-container .box .content .span1{
+        font-size: 1rem;
+        text-align: center;
+        margin-left: 2.5rem;
+    }
+
+    .reviews .box-container .box .content .span2{
+        margin-left: 4.5rem;
+    }
+    
+    .reviews .box-container .box .content h3{
+        font-size: 1.1rem;
+        margin-left: 4rem;
+    }
+    
+    .reviews .box-container .box .content .head1{
+        margin-left: 3rem;
+    }
+
+    .reviews .content .share .btn1 {
+        margin-top: 1rem;
+        font-size: 1rem;
+        margin-left: 4rem;
+    }
+
+    .reviews .box-container .box .content .share{
+        width: 10rem;
+    }
+    .reviews .box-container .box .content .share p{
+        font-size: 0.9rem;
+        width: 7rem;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .reviews{
+        padding: 4rem;
+        margin-top: -10rem;
+    }
+    
+    .reviews .heading span{
+        font-size: 1.2rem;
+        background-color: black;
+        padding: 0.5rem 1.5rem;
+        border: 2px solid white;
+        border-radius: 5rem 2rem;
+    }
+
+
+    .reviews .box-container .box{
+        width: 16rem;
+        height: 24rem;
+    }
+    
+    .reviews .box-container .box .image{
+        height: 9rem;
+        width: 7rem;
+        margin-left: 2rem;
+    }
+    
+    .reviews .box-container .box img{
+        height: 9rem;
+        width: 7rem;
+    }
+    
+    .reviews .box-container .box .content{
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding: 1.8rem;
+    }
+    
+    .reviews .box-container .box .content span{
+        font-size: 0.8rem;
+        text-align: center;
+        margin-left: 2rem;
+    }
+
+    .reviews .box-container .box .content .span1{
+        font-size: 0.8rem;
+        text-align: center;
+        margin-left: 1rem;
+    }
+
+    .reviews .box-container .box .content .span2{
+        margin-left: 2.5rem;
+    }
+    
+    .reviews .box-container .box .content h3{
+        font-size: 1rem;
+        margin-left: 0rem;
+    }
+
+    .reviews .box-container .box .content .head1{
+        margin-left: 1rem;
+    }
+    
+    .reviews .content .share .btn1 {
+        margin-top: 1rem;
+        font-size: 1rem;
+        margin-left: 2rem;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .reviews{
+        /* width: 1rem; */
+        padding: 2rem;
+        margin-top: -4rem;
+    }
+    
+    .reviews .heading span{
+        font-size: 1rem;
+        background-color: black;
+        padding: 0.3rem 1.2rem;
+        border: 2px solid white;
+        border-radius: 5rem 2rem;
+    }
+
+
+    .reviews .box-container .box{
+        width: 16rem;
+        height: 20rem;
+    }
+    
+    .reviews .box-container .box .image{
+        height: 7rem;
+        width: 5rem;
+        margin-left: 3rem;
+        /* text-align: center; */
+    }
+    
+    .reviews .box-container .box img{
+        height: 7rem;
+        width: 5rem;
+    }
+    
+    .reviews .box-container .box .content{
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding: 1.8rem;
+    }
+    
+    .reviews .box-container .box .content span{
+        font-size: 0.7rem;
+        text-align: center;
+        margin-left: 2rem;
+    }
+
+    .reviews .box-container .box .content .span1{
+        font-size: 0.7rem;
+        text-align: center;
+        margin-left: 0rem;
+    }
+
+    .reviews .box-container .box .content .span2{
+        margin-left: 2.5rem;
+    }
+    
+    .reviews .box-container .box .content h3{
+        font-size: 0.9rem;
+        margin-left: 0;
+    }
+
+    .reviews .box-container .box .content .head1{
+        margin-left: 1rem;
+    }
+    
+    .reviews .content .share .btn1 {
+        margin-top: 1rem;
+        font-size: 0.8rem;
+        padding: 0.3rem 0.8rem;
+        margin-left: 2.5rem;
+    }
+    .reviews .box-container .box .content .share{
+        width: 10rem;
+        margin-right: 2rem;
+    }
+    .reviews .box-container .box .content .share p{
+        font-size: 0.9rem;
+        width: 10rem;
+        margin-left: -1rem;
+    }
+}
+
+
+/* ---------------------------------------------- */
+/*---------- Review Section Mobile End -----------*/
+/* ---------------------------------------------- */
+
+
+/* ---------------------------------------------- */
+/*---------- Google Map Section Start  -----------*/
+/* ---------------------------------------------- */
+
+.map{
+    padding: 7rem;
+    margin-top: -9rem;
+}
+
+.map .heading{
+    text-align: center;
+    margin-bottom: 2rem;
+    /* margin-top: 3.5rem; */
+    position: relative;
+}
+
+.map .heading::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 0.1rem;
+    width: 100%;
+    background-color: white;
+    z-index: -1;
+}
+
+.map .heading span{
+    font-size: 1.4rem;
+    color: red;
+    background-color: black;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid white;
+    border-radius: 5rem 2rem;
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 2px;
+}
+
+.map .map1{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 9rem;
+}
+
+.map .map1 iframe{
+    width: 1000px;
+    height: 250px;
+}
+
+
+/* ---------------------------------------------- */
+/*------------ Google Map Section End ------------*/
+/* ---------------------------------------------- */
+
+/* ---------------------------------------------- */
+/*------ Google Map Section Mobile Start  --------*/
+/* ---------------------------------------------- */
+
+@media only screen and (max-width: 1200px) {
+    .map .map1{
+        margin-left: 10rem;
+    }
+
+    .map .map1 iframe{
+        width: 700px;
+        height: 250px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .map .map1{
+        margin-left: 5rem;
+    }
+
+    .map .map1 iframe{
+        width: 500px;
+        height: 250px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    .map .heading span{
+        font-size: 1.1rem;
+        color: red;
+        background-color: black;
+        padding: 0.4rem 1.2rem;
+        border: 2px solid white;
+        border-radius: 5rem 2rem;
+    }
+
+    .map .map1{
+        margin-left: 2rem;
+    }
+
+    .map .map1 iframe{
+        width: 400px;
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+
+    .map{
+        padding: 3rem;
+        margin-top: -9rem;
+    }
+
+    .map .map1{
+        margin-left: 0rem;
+    }
+
+    .map .map1 iframe{
+        width: 300px;
+        height: 150px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .map{
+        padding: 2rem;
+        margin-top: -3rem;
+    }
+
+    map .heading span{
+        font-size: 1rem;
+        color: red;
+        background-color: black;
+        padding: 0.3rem 1rem;
+        border: 2px solid white;
+        border-radius: 5rem 2rem;
+    }
+    .map .map1 iframe{
+        width: 250px;
+        height: 100px;
+    }
+}
+
+/* ---------------------------------------------- */
+/*------ Google Map Section Mobile End  ----------*/
+/* ---------------------------------------------- */
+
+
+/* ---------------------------------------------- */
+/*------------- Footer Section Start -------------*/
+/* ---------------------------------------------- */
+
+.footer{
+    padding: 3rem 5rem;
+    margin-top: -5rem;
+}
+
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    margin-left: 3rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 1.5rem;
+    color: #D1740D;
+    /* letter-spacing: 2px; */
+}
+
+.footer .box-container .box li{
+    margin-top: 2rem;
+    list-style-type: none;
+    display: inline;
+    letter-spacing: 2px;
+}
+
+.footer .box-container .box .links{
+    font-size: 1rem;
+    display: block;
+    color: white;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+}
+
+.footer .box-container .box .links:hover {
+    color: red;
+    transform: translateX(10%);
+}
+
+.footer .box-container .box p{
+    color: white;
+    padding: 0.5rem 0;
+}
+
+.footer .box-container .box .para1{
+    margin-top: 0.4rem;
+}
+
+.footer .box-container .box i{
+    color: red;
+    padding-right: 1rem;
+}
+
+.footer .box-container .box p a{
+    text-transform: lowercase;
+    color: white;
+    cursor: pointer;
+}
+
+.footer .box-container .box .share{
+    padding: 1rem 0;;
+}
+
+.footer .box-container .box .share .links{
+    height: 2.5rem;
+    width: 2.5rem;
+    line-height: 3rem;
+    font-size: 1.7rem;
+    color: white;
+    background-color: rgb(20, 16, 16); 
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    text-align: center;
+    display: inline;
+}
+
+.footer .box-container .box .share i{
+    margin-left: 1rem;
+}
+
+.footer .box-container .box .share .links i{
+    color: white;
+}
+
+.footer .box-container .box .share .links #face:hover, #twit:hover {
+    color: #4267B2;
+}
+
+.footer .box-container .box .share .links #insta:hover {
+    color: rgb(194, 59, 82);
+}
+
+.footer .box-container .box form label{
+    color: white;
+}
+
+.footer .box-container .box form .name,
+.footer .box-container .box form .email{
+    margin-top: 0.5rem;
+    margin-bottom: 0.8rem;
+    width: 100%;
+    background: rgb(61, 61, 61);
+    /* padding: 0.3rem; */
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    color: white;
+    text-transform: none;
+}
+
+.footer .box-container .box form .btn {
+    margin-top: 1rem;
+    display: inline-block;
+    background-color: red;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    border-bottom-right-radius: 50%;
+    margin-left: 0rem;
+    padding: 0 1rem;
+}
+
+.footer .box-container .box form .btn:hover {
+    transform: translateX(20%);
+}
+
+
+.credit{
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.8rem;
+    letter-spacing: 2px;
+    margin-top: -2rem;
+}
+
+.credit a{
+    color: white;
+}
+/* ---------------------------------------------- */
+/*-------------- Footer Section End --------------*/
+/* ---------------------------------------------- */
+
+/* ---------------------------------------------- */
+/*-------- Footer Section Mobile Start -----------*/
+/* ---------------------------------------------- */
+
+@media only screen and (max-width: 750px) {
+    .footer{
+        padding: 3rem 5rem;
+        margin-top: -5rem;
+    }
+    
+    .footer .box-container{
+        gap: 5rem;
+        margin-left: 2rem;
+    }
+    
+    .footer .box-container .box h3{
+        font-size: 1.3rem;
+    }
+    
+    .footer .box-container .box li{
+        margin-top: 1.5rem;
+    }
+    
+    .footer .box-container .box .links{
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+        padding: 0.5rem 0;
+    }
+
+    .footer .box-container .box p{
+        padding: 0.5rem 0;
+        font-size: 0.8rem;
+    }
+    
+    .footer .box-container .box .para1{
+        margin-top: 0.4rem;
+    }
+    
+    .footer .box-container .box i{
+        padding-right: 1rem;
+    }
+    
+    
+    .footer .box-container .box .share{
+        padding: 1rem 0;;
+    }
+    
+    .footer .box-container .box .share .links{
+        height: 2.5rem;
+        width: 2.5rem;
+        line-height: 3rem;
+        font-size: 1.5rem;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+    }
+    
+    .footer .box-container .box .share i{
+        margin-left: 1rem;
+    }
+    
+    .footer .box-container .box form label{
+        font-size: 0.8rem;
+    }
+    
+    .footer .box-container .box form .name,
+    .footer .box-container .box form .email{
+        margin-top: 0.5rem;
+        margin-bottom: 0.7rem;
+        width: 100%;
+        font-size: 0.8rem;
+        border-radius: 0.5rem;
+    }
+    
+    .footer .box-container .box form .btn {
+        margin-top: 1rem;
+        font-size: 1rem;
+        border-radius: 5px;
+        border-bottom-right-radius: 50%;
+        margin-left: 0rem;
+        padding: 0 1rem;
+    }
+
+    
+    .credit{
+        font-size: 1rem;
+        padding: 0.8rem;
+        letter-spacing: 2px;
+        margin-top: -2rem;
+    }
+    
+}
+
+@media only screen and (max-width: 550px) {
+    .footer{
+        padding: 2rem;
+        margin-top: 0rem;
+    }
+
+    .footer .box-container{
+        gap: 4rem;
+        margin-left: 1rem;
+    }
+
+    .footer .box-container .box h3{
+        font-size: 1.3rem;
+    }
+    .footer .box-container .box i{
+        color: red;
+        padding-right: 0.8rem;
+    }
+
+    .footer .box-container .box .share .links{
+        font-size: 1.2rem;
+    }
+    .credit{
+        font-size: 0.7rem;
+        padding: 0.6rem;
+        margin-top: 0rem;
+    }
+}   
+
+/* ---------------------------------------------- */
+/*-------- Footer Section Mobile End -------------*/
+/* ---------------------------------------------- */
